@@ -1,0 +1,29 @@
+@startuml
+class Biblioteca {
+    - nombre: string
+    - direccion: string
+    - libros: Libro[]
+    + agregarLibro(libro: Libro): void
+    + buscarLibro(titulo: string): Libro
+    + prestarLibro(titulo: string, persona: string): boolean
+    + devolverLibro(titulo: string): boolean
+}
+
+class Libro {
+    - titulo: string
+    - autor: string
+    - isbn: string
+    + getTitulo(): string
+    + getAutor(): string
+    + getISBN(): string
+}
+
+class Persona {
+    - nombre: string
+    - edad: int
+    + getNombre(): string
+    + getEdad(): int
+}
+
+Biblioteca "1" *-- "*" Libro
+@enduml
